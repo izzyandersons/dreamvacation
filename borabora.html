@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" type="image/jpg" href="chili.jpg" />
+	  <link rel="stylesheet"/>
+
+<style> 
+html {
+overflow: scroll
+}
+h1 {
+	color : #000000;
+	font-size: 30px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #cbe3ef;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+    border-right:1px solid #cbe3ef;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) { 
+
+    background-color: #cbe3ef;
+}
+.active {
+	background-color: #cbe3ef;
+	}
+	overflow: scroll;
+	}
+</style>
+</head>
+<body>
+
+<ul>
+
+<li><a href="nick&izzy'svacation.html">Home</a></li>
+<li><a class="active" href="#borabora.html">Bora Bora</a></li>
+<li><a href="australia.html" >Australia</a></li>
+<li><a href="thailand.html">Thailand</a></li>
+<li><a href="chile.html">Chile</a></li>
+<li><a href="newzealand.html">New Zealand</a></li>
+<li><a href="greece.html">Greece</a></li>
+
+</ul>
+<div style="padding:20px;margin-top:45px;background-color:#f4eff7;height:1500px;">
+
+<h1>Bora Bora</h1>
+
+<div id="googleMap" style="width:1050px;height:400px;"></div>
+
+
+<script>
+function myMap() {
+//latitude & longitude of where the map is centered
+//how zoomed in the map is
+//mapProp is a dictionary similar to how your css styles worked
+//west and south have negative values for latitude & longitude
+var mapCenter = new google.maps.LatLng(-16.5004,-151.7415);
+var mapProp= {
+    center:mapCenter,
+    zoom:12,
+     mapTypeId: google.maps.MapTypeId.SATELLITE
+};
+//
+var borabora= new google.maps.LatLng(-16.5004, -151.7415);
+var australia = new google.maps.LatLng(-33.5572, 151.3174);
+var thailand =new google.maps.LatLng(8.2446, 98.5635);
+var chile =new google.maps.LatLng(-46.6586, -72.6280);
+var newzealand =new google.maps.LatLng(-45.340497,170.822300);
+var greece =new google.maps.LatLng(36.4618,25.3753);
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp); 
+
+var boraboramarker = new google.maps.Marker({position: borabora});
+boraboramarker.setMap(map);
+var australiamarker = new google.maps.Marker({position: australia});
+australiamarker.setMap(map);
+var thailandmarker = new google.maps.Marker({position: thailand});
+thailandmarker.setMap(map);
+var chilemarker = new google.maps.Marker({position: chile});
+chilemarker.setMap(map);
+var newzealandmarker = new google.maps.Marker({position: newzealand});
+newzealandmarker.setMap(map);
+var greecemarker = new google.maps.Marker({position: greece});
+greecemarker.setMap(map);
+
+
+
+var myTrip = [borabora,australia, africa, thailand, chile, newzealand, greece];
+var flightPath = new google.maps.Polyline({
+  path:myTrip,
+  strokeColor:"#75528e",
+  strokeOpacity:0.8,
+  strokeWeight:2
+});
+
+flightPath.setMap(map);
+}
+</script>
+<h2>The Four Seasons Hotel</h2>
+<img src="borabora.jpeg">
+
+<h2>Mt. Otemanu Cave</h2>
+<p>Mt. Otemanu has a beautiful cave around the summit. The cave has a breathtaking overlook of Bora Bora. The climb to the cave takes around 2 to 2.5 hours. When you reach the cave, you may find the graves of ancestors and nesting birds. This is a mind-blowing experience that we would love to partake in.</p>
+
+
+<img src="cave.jpg">
+
+<p>https://res.cloudinary.com/wanderable/image/upload/v1491931214/vveyb8qbnbn1ebaiqlgj.jpg</p>
+<p>https://lh3.googleusercontent.com/Ye64obqv39kVzLPJY7dZ-1H_EQZMuYmpcXKubc6bLbjOsB0n6BDvWo9ulbnwLFn4JgSgg48=s114s</p>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5RPxcaGr35TCouoCbYbQ_oXtYDip6x-4&callback=myMap"></script>
+
+</body>
+</html>
